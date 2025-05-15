@@ -65,8 +65,16 @@
     </section>
 
     <section class="row my-3">
-
+  <button onclick="(function inicializacion(){
+    console.log('Hola desde el boton');
+    console.log('alguien cumple años?')
+  })()">click me</button>
     </section>
+
+    <p>El resultado del área del circulo es: <span id="area-circulo"></span></p>
+    <p>El saludo es: <span id="saludo-callback"></span> </p>
+    <p>El resultado es: <span id="resultado-sumatoria"></span> </p>
+    <h2>El resultado es: <span id="resultadoH2-sumatoria"></span> </h2>
   </main>
 
   <footer class="container text-center">   
@@ -75,10 +83,11 @@
 
   <!-- Bootstrap core JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <!-- Main custom JS -->
-  <script src="./src/js/main.js"></script>
+  <script src="./src/js/main.js" defer></script>
 </body>
 
 </html>
