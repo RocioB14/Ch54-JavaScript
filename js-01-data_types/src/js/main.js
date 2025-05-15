@@ -47,6 +47,23 @@ let valor2 = 4;
 console.log("El resultado de " + valor1 + " * " + valor2 + " = " + valor1 * valor2 + " pesos.");
 console.log(`El resultado de ${valor1} * ${valor2} = ${valor1*valor2} pesos.`);
 
+/* 
+ Crear una variable con el nombre de la persona que cumple años.
+ Crear una variable con el regalo que le darás.
+ Mostrar en consola el mensaje que incluya el nombre de las persona y el regalo.
+*/
+
+
+
+function felizCumple(nombre,regalo){
+console.log(`Feliz cumpleaños a ${nombre} de regalo tienes una ${regalo}`);
+}
+
+
+let nombre = "Angel";
+let regalo = "paleta";
+
+felizCumple(nombre,regalo)
 /*
  Tipos de datos number.
 
@@ -67,6 +84,18 @@ console.log( typeof +Infinity ); // 'number'
 console.log( typeof ( 3 + "Viernes temático" ) ); // 'string'
 console.log( typeof ( "3Viernes temático" ) ); // 'string'
 console.log( 4 / 0 ); // +Infinity
+
+/* Comprueba si las siguientes variables son del tipo number*/
+const num1 = 42;
+/* Comprueba si las siguientes variables son del tipo string*/
+const nameCh54 = "Rocio";
+console.log(typeof num1 === 'number'); //number
+console.log(typeof nameCh54 === 'string'); //string
+
+const numCh54 = "Rocio";
+if (typeof numCh54 == 'string') {
+  console.log('Es una cadena de texto');
+} else console.log('No es una cadena de texto');
 
 
 /*
