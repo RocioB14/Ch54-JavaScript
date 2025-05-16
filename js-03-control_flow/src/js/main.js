@@ -3,7 +3,6 @@
  se ejecutan las instrucciones de un programa, desde el inicio 
  hasta el final. Se basa en estructuras como secuencias, 
  condiciones y bucles que determinan qué parte del código se ejecuta y cuándo.
-
 */
 
 // ----------------- Condicional if-else --------------------
@@ -42,7 +41,92 @@
 
 */
 
+/* 
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18, la función debe
+ retornar el mensaje "Eres mayor de edad".
+ En caso contrario, retornar el mensaje "Eres menor de edad".
+ - Realizar la versión de if-else sin usar el bloque de código {}
+*/
+const verificarEdad = edad => {
+    if (edad >= 18) return "Eres mayor de edad";
+    else return "Eres menor de edad";
+}
+const resultados = verificarEdad(19);
+console.log(resultados);
 
+/*
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18 y menor o igual a 30
+                 ( evalur con 18 Y(&&) evaluar con 30        )
+ la función debe retornar el mensaje "Tu luchador es Místico".
+ Si es mayor o igual a 31 el mensaje "Tu luchador es el perro Aguayo".
+ Si es menor a 18 el mensaje "Tu luchador es Penta"
+*/
+
+/*
+const verificarEdad2 = edad => {
+    if (edad >= 18 && edad <= 30 ) return "Tu luchador es mistico";
+    else if(edad =>31) return "Tu luchador es el perro aguayo";
+    else return "Tu luchador es penta";
+}
+const resultado = verificarEdad2(prompt("Cual es tu edad?"))
+console.log(resultado);
+*/
+
+const determinarLuchador = (edad) => {
+  if (edad >= 18 && edad <= 30) {
+    return "Tu luchador es Místico";
+    } else if (edad >= 31) {
+        return "Tu luchador es el perro Aguayo";
+         } else {
+             return "Tu luchador es Penta";
+  }
+};
+console.log(determinarLuchador(25)); // "Tu luchador es Místico"
+console.log(determinarLuchador(35)); // "Tu luchador es el perro Aguayo"
+console.log(determinarLuchador(15)); // "Tu luchador es Penta"
+//bloque de codigo
+/*
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar)
+    {
+        let myVarLet = 100;
+        const myVarConst = 110;
+        var myVarVar = 120;
+        console.log(myVarLet, myVarConst, myVarVar)
+    }
+    console.log(myVarLet, myVarConst, myVarVar)
+}
+*/
+
+// ejercicios mentales
+/*
+let active = false;
+if(active == true ); {
+    console.log("Esta activo");
+}
+console.log("Fin del programa");
+*/
+/*
+active=false;
+if (active)
+    console.log("Esta activo");
+    console.log("Tiene actualizacion");
+
+    console.log("Fin del programa");
+
+*/
+/*
+active=false;
+if (active); console.log("Esta activo");
+    else console.log("Esta activo");
+    
+    console.log("Fin del programa");
+*/
 
 
 //--------------- Condicional Switch --------------------------
@@ -72,9 +156,32 @@
   }
 
 */
-
-
-
+const evaluarNombre = ( nombre ) => {
+    let resultado;
+    switch ( nombre){
+        case "Lua":
+            resultado = "Es de Abril";
+            break;
+        case "Borrego": 
+        case "Besito":
+        case "Frijol":
+        case "Paco":
+            resultado = "Es de Yessica";
+            break;
+        case "Milo":
+            resultado = "Es de Carlos";
+            break
+        case "Cuchara":
+            resultado = "Es de Ricardo";
+            break;
+        default:
+            resultado ="No se sabe de quién es";        
+    }
+    return resultado;
+}
+console.log( evaluarNombre("Lua") ); // Es de Abril
+console.log( evaluarNombre("Milo") ); // Es de Carlos
+console.log( evaluarNombre("Borrego") ); // Es de Jessica
 
 /**
  * Función que reciba la velocidad de un ventilador y devuelva el mensaje
@@ -86,9 +193,46 @@
  * Cualquier otro valor: Velocidad desconocida
  * @param {number} velocidad
  * @returns {string} mensaje
+ * 
+ * realizar dos versiones, una versión con switch y otra con if-else
  */
 
+function estadoVentiladorSwitch(velocidad) {
+    switch(velocidad) {
+        case 0:
+            return "Apagado";
+        case 1:
+            return "Baja";
+        case 2:
+            return "Media";
+        case 3:
+            return "Alta";
+        default:
+            return "Velocidad desconocida";
+    }
+}
 
+///// CON IF
+function estadoVentiladorIfElse(velocidad) {
+    if (velocidad === 0) {
+        return "Apagado";
+    } else if (velocidad === 1) {
+        return "Baja";
+    } else if (velocidad === 2) {
+        return "Media";
+    } else if (velocidad === 3) {
+        return "Alta";
+    } else {
+        return "Velocidad desconocida";
+    }
+}
+console.log(estadoVentiladorSwitch(0)); // "Apagado"
+console.log(estadoVentiladorSwitch(2)); // "Media"
+console.log(estadoVentiladorSwitch(5)); // "Velocidad desconocida"
+
+console.log(estadoVentiladorIfElse(1)); // "Baja"
+console.log(estadoVentiladorIfElse(3)); // "Alta"
+console.log(estadoVentiladorIfElse(-1)); // "Velocidad desconocida"
 
 
 // ------------------------ Operador ternario --------------------------
@@ -100,8 +244,88 @@
   condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa; 
 
 */
+/*
+const verificarPagoDeTarjeta = ( estaPagado ) =>{
+    let msj;
+    if( estaPagado) {
+        msj = "La tarjta ha sido pagada";
+    } else {
+        msj = "La tarjeta no ha sido pagada";
+    }
+    return msj;
+}
+console.log( verificarPagoDeTarjeta( true ) );
+console.log( verificarPagoDeTarjeta( false ) );
+*/
+//operador ternario 
+
+const verificarPagoDeTarjeta2 = ( estaPagado ) =>{
+
+    return estaPagado ? "La tarjeta ha sido pagada" : "La tarjeta no ha sido pagada"
+}
+console.log( verificarPagoDeTarjeta2( true ) );
+console.log( verificarPagoDeTarjeta2( false ) );
+
+/*
+ Dado un número entero, imprimir:
+ "Negativo":  si el número es menor a 0.
+ "Cero":  si el número es  0.
+ "Positivo":  si el número es mayor a cero pero menor a 100.
+ "Grande": si el número es mayor o igual a 100.
+ - Realizar una función que reciba el número y retorne el mensaje.
+ - El retorno debe ser impreso en la consola.
+ - Realizar una versión if-else, switch y operador ternario.
+*/
 
 
+function tipoDeNumero(numero) {
+    if (numero === 0) {
+        return "Cero";
+    } else if (numero <0 ) {
+        return "negativo";
+    } else if (numero <= 100 ) {
+        return "Positivo";
+    } else if (numero > 100) {
+        return "Grande";
+    }
+}
+console.log(tipoDeNumero(0)); //
+console.log(tipoDeNumero(14)); //
+console.log(tipoDeNumero(105)); // 
+console.log(tipoDeNumero(-23)); // 
+
+///////////////// switch /////////////////
+function numeroSwitch(numero1) {
+    switch(true) {
+        case  (numero1===0):
+            return "Cero";
+        case (numero1 < 0):
+            return "Negativo";
+        case (numero1 >0 && numero1 <= 100):
+            return "Positivo";
+        default:
+            return "Grande";
+    }
+}
+
+console.log(numeroSwitch(0)); //cero
+console.log(numeroSwitch(14)); //
+console.log(numeroSwitch(105)); // 
+console.log(numeroSwitch(-23)); // 
+
+////////// operador ternario/////////////
+
+function numeroTernario(numero) {
+    return numero < 0 ? "Negativo" 
+         : numero === 0 ? "Cero" 
+         : numero < 100 ? "Positivo" 
+         : "Grande";
+}
+
+console.log(numeroTernario(0));  // "Negativo"
+console.log(numeroTernario(14));   // "Cero"
+console.log(numeroTernario(105));  // "Positivo"
+console.log(numeroTernario(-23)); // "Grande"
 
 
 /**
